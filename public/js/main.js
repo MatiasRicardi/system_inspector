@@ -1,7 +1,7 @@
 //websockets and navigation tabs
 
 //constants 
-const socketServerUrl = 'ws://localhost:3280/ws';
+const socketServerUrl = `ws://${serverData.backendUrl}/ws`;
 
 // navigation tabs and sections
 document.addEventListener('DOMContentLoaded', function () {
@@ -26,12 +26,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const ws = new WebSocket(socketServerUrl);
   ws.addEventListener('open', () => {
     console.log('WebSocket connection established');
+    //getting first data
     ws.send('getFreshData');
 
     // Send a message to the server every 5 seconds to get fresh data
-    setInterval(() => {
-      ws.send('getFreshData');
-    }, 5000);
+    setInterval(() => { ws.send('getFreshData') }, 5000);
   });
 
   ws.addEventListener('message', (event) => {

@@ -6,6 +6,7 @@ const fastifyView      = require('@fastify/view');
 const fastifyWebSocket = require('@fastify/websocket');
 const ejs              = require('ejs');
 const port             = process.env.PORT || 3280;
+const backendUrl       = `localhost:${port}`;
 
 //loading plugins
 async function registerPlugins() {
@@ -26,7 +27,7 @@ async function registerPlugins() {
 async function loadRoutes(fastify) {
   //main route to render the index.ejs
   fastify.get('/', async (req, reply) => {
-    return reply.view('index.ejs');
+    return reply.view('index.ejs', { data : { backendUrl } });
   });
 
   //websocket route

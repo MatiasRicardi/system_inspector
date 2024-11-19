@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "@fastify/static": "^8.0.2",
+    "@fastify/view": "^10.0.1",
+    "@fastify/websocket": "^11.0.1",
+    "ejs": "^3.1.10",
+    "fastify": "^5.1.0",
+    "systeminformation": "^5.23.5"
+  },
+  "name": "system_inspector",
+  "version": "1.0.0",
+  "description": "check system resources in real time",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "start" : "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MatiasRicardi/system_inspector.git"
+  },
+  "author": "MatiasRicardi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MatiasRicardi/system_inspector/issues"
+  },
+  "homepage": "https://github.com/MatiasRicardi/system_inspector#readme"
+}
